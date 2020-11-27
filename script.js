@@ -10,66 +10,83 @@ function writePassword() {
 
 }
 
-edit
-play_arrow
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
-brightness_4
-<!DOCTYPE HTML>  
-<html>  
-  
-<body style = "text-align:center;">  
+function generatePassword() {
+  var passwordLength = parseInt(prompt("Enter how long you want your password tp be between 10 and 100"));
 
-      
-    <button onclick = "gfg_Run()">  
-        Click Here 
-    </button> 
-      
-      
-    <script> 
-        var el_down = document.getElementById("password"); 
-          
-        function gfg_Run() { 
-            el_down.innerHTML =  
-                Math.random().toString(36).slice(2) +  
-                Math.random().toString(36) 
-                    .toUpperCase().slice(2); 
-            }  
-    </script>  
-</body>  
-  
-</html>  
+  var minChar = 8;
+  var maxChar = 128;
 
+  if (isNaN(passwordLength))  {
 
+    alert("Choose a Number");
 
-// Variables to go into pw
-
-var char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var num = '0123456789';
-var sym = '!@#$%^&*=-_';
-
-
-var charNum = document.getElementById("charNum");
-var numBox = document.getElementById("num");
-var symBox = document.getElementById("sym");
-var submit = document.getElementById("submit");
-var yourPw = document.getElementById("yourPw");
-
-
-
-submit.addEventListener("click",function(e){
-  var characters = char;
-  (numBox.checked) ? characters += num : '';
-  (symBox.checked) ? characters += sym : '';
-  yourPw.value = password(charNum.value, characters);
-});
-
-function password(l,characters){
-  var pwd = '';
-  for(var i = 0; i<l; i++){
-      pwd += characters.charAt(Math.floor(Math.random() * characters.length));
   }
-  return pwd;
-}
 
-Add event listener to generate button
+  else if (passwordLength < minChar)  {
+
+    alert("Password lemgth muct be atleast 8 characters");
+    passwordLength = 0;
+
+  }
+
+  else if (passwordLength > maxChar)  {
+
+    alert("Password length must not surpass 128 characters");
+    passwordLength = 0 
+
+  }
+
+  else {
+    var useLowerCase = confirm("Click OK to use lowercase characters");
+    var useUpperCase = confirm("Click OK to use uppercase characters");
+    var useNumeric = confirm("Click OK to use numbers");
+    var useSpecialChar = confirm("Click OK to use special characters");
+
+  }
+
+  if (
+    useLowerCase === false &&
+    useUpperCase === false &&
+    useNumeric === false &&
+    useSpecialChar === 
+   {
+    alert (
+    ("You must use atleast one special character for you password");
+    )}
+    
+    else {
+      var charLower = "abcdefghijklmnopqrstuvwxyz";
+      var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var charNum = "0123456789";
+      var charSpecial = "<>?~!@#$%^&*";
+      var charStr = "";
+
+function randomNum(a) {
+      var number = math.floor(Math.random() * a.length);
+      return number;
+    }
+  
+function pushChar(x,y)  {
+      if (y) {
+        charStr += x;
+      }
+    }
+
+pushChar(charLower, useLowerCase);
+pushChar(charUpper, useUpperCase);
+pushChar(charNum, useNumeric);
+pushChar(charSpecial, useSpecialChar);
+  }
+
+  for (var i = 0, passwordStr = ""; i < passwordLength; i++)  {
+  }
+
+  var passwordArray = passwordStr.split("");
+  var finalPassword = passwordArray.join("");
+
+  return finalPassword;
+
 generateBtn.addEventListener("click", writePassword);
