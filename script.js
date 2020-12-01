@@ -19,7 +19,7 @@ function generatePassword() {
   var minChar = 8;
   var maxChar = 128;
 
-  var passwordLength = parseInt(prompt("Enter how long you want your password tp be between 8 and 128"));
+  var passwordLength = parseInt(prompt("Choose between 8 and 128"));
 
   if (isNaN(passwordLength)) {
     alert("Choose a Number");
