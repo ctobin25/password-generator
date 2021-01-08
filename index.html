@@ -1,34 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Password Generator</title>
+</head>
+
+<body>
+  <H1>Password Generator</H1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 side-section">
+
+        <div id="container-fluid">
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Minimum amount of characters:
+            </div>
+            <div class="col-sm-4 userinput">
+              <input type="number" id="minLength" name="minChar" size=6 required> </input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Maximum amount of characters:
+            </div>
+            <div class="col-sm-4 userinput">
+              <input type="number" id="maxLength" name="maxChar" required> </input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Include Special Characters
+            </div>
+            <div class="col-sm-1 userinput">
+              <input class="div-check-input" type="checkbox"  id="specialChars">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Include Numbers
+            </div>
+            <div class="col-sm-1 userinput">
+              <input class="div-check-input" type="checkbox"  id="num">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Include Lower Case
+            </div>
+            <div class="col-sm-1 userinput">
+              <input class="div-check-input" type="checkbox"  id="lowerCase">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 text-align criteria">
+              Include Upper Case
+            </div>
+            <div class="col-sm-1 userinput">
+              <input class="div-check-input" type="checkbox"  id="upperCase">
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+        <div class="row">
+          <div class="col-sm-12 text-align center">
+            <button onclick="passwordGenerator()" class="center btn btn-secondary ">Generate Password</button>
+          </div>
         </div>
       </div>
+     
+      <div class="col-sm-6 side-section">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4 id="output-title"> Generated Password </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="output"></p>
+          </div>
+        </div>
+        
+      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
+  
