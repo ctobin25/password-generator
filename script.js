@@ -12,3 +12,24 @@ function passwordGenerator() {
         alert('Must pick one');
         return;
     }
+
+
+    var passwordChoices = ''
+    var listSpecial = '!@#$%^&*()'
+    if(specialChars === true){
+        passwordChoices += listSpecial;
+    }
+    var listNum = '1234567890'
+    if(num){
+        passwordChoices += listNum;
+    }
+    var lowercaseList = 'abcdef';
+    if(lowerCase){
+        passwordChoices += lowercaseList;
+    }
+    var uppercaseList = 'ABCDE';
+    if(upperCase){
+        passwordChoices += uppercaseList;
+    }
+    passworChoices(passwordChoices, charLength)
+}
